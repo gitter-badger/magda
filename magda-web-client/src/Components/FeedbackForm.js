@@ -10,7 +10,7 @@ import feedback from "../assets/feedback.svg";
 import close from "../assets/close.svg";
 import success from "../assets/success.svg";
 import Notification from "../UI/Notification";
-import ReactTooltip from 'react-tooltip'
+import ReactTooltip from "react-tooltip";
 
 class FeedbackForm extends React.Component {
     constructor(props) {
@@ -194,6 +194,9 @@ class FeedbackForm extends React.Component {
                         {this.state.validationErrorMessage ? (
                             <ReactTooltip />
                         ) : null}
+                            <div className="privacy-link">
+                                <a href="/page/privacy-policy" target="_blank">Privacy Policy</a>
+                            </div>
                     </div>
                 </div>
             </div>
