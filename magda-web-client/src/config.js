@@ -109,7 +109,8 @@ export const config = {
             category: "About",
             links: [
                 ["About data.gov.au", "page/about"],
-                ["Blog", "https://blog.data.gov.au/"]
+                ["Blog", "https://blog.data.gov.au/"],
+                ["Privacy Policy", "page/privacy-policy"]
             ]
         }
     ]

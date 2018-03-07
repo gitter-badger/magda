@@ -41,9 +41,12 @@ class FeedbackForm extends React.Component {
 
     checkRequiredFields(state) {
         const requiredFields = [];
-        if (!state || !state.email || state.email.trim() === '') requiredFields.push(`Email`);
-        if (!state || !state.feedback || state.feedback.trim() === '') requiredFields.push(`Feedback`);
-        if (requiredFields.length) return this.createFieldListString(requiredFields) + " mandatory.";
+        if (!state || !state.email || state.email.trim() === "")
+            requiredFields.push(`Email`);
+        if (!state || !state.feedback || state.feedback.trim() === "")
+            requiredFields.push(`Feedback`);
+        if (requiredFields.length)
+            return this.createFieldListString(requiredFields) + " mandatory.";
         return null;
     }
 
@@ -98,7 +101,7 @@ class FeedbackForm extends React.Component {
     onDismissErrorNotification() {
         this.setState({
             errorMessage: null
-        })
+        });
     }
 
     renderByState() {
@@ -132,7 +135,8 @@ class FeedbackForm extends React.Component {
         return (
             <div className="feedback-form-inner">
                 <div className="feedback-form-header">
-                    {`Have feedback on this website? We're all ears`}
+                    <span
+                    >{`Have feedback on this website? We're all ears`}</span>
                     <Button
                         className="close-btn"
                         onClick={() => {
@@ -180,23 +184,25 @@ class FeedbackForm extends React.Component {
                                     : "Send"}
                             </Button>
                         ) : (
-                                <Button
-                                    className="send-btn"
-                                    disabled={this.props.isSendingFeedback}
-                                    onClick={this.onSubmit}
-                                >
-                                    {this.props.isSendingFeedback
-                                        ? "Sending..."
-                                        : "Send"}
-                                </Button>
-                            )}
+                            <Button
+                                className="send-btn"
+                                disabled={this.props.isSendingFeedback}
+                                onClick={this.onSubmit}
+                            >
+                                {this.props.isSendingFeedback
+                                    ? "Sending..."
+                                    : "Send"}
+                            </Button>
+                        )}
 
                         {this.state.validationErrorMessage ? (
                             <ReactTooltip />
                         ) : null}
-                            <div className="privacy-link">
-                                <a href="/page/privacy-policy" target="_blank">Privacy Policy</a>
-                            </div>
+                        <div className="privacy-link">
+                            <a href="/page/privacy-policy" target="_blank">
+                                Privacy Policy
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
